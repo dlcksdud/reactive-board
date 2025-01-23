@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dream.mapper.UserMapper">
+    <select id="getUser"  resultType="map">
+        select *
+        from USER_INFO
+        <where>
+            <if test="num != null">
+                NUM = #{num}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateServerIp">
+        UPDATE USER_INFO
+        SET SERVER_IP = #{encryptedIp}
+        WHERE NUM = #{num}
+    </update>
+
+    <update id="updateUser">
+        UPDATE USER_INFO
+        SET
+            DATABASE_TYPE = #{user.databaseType},
+            DATABASE_VERSION = #{user.databaseVersion},
+            SERVER_IP = #{user.serverIp},
+            DATABASE_ID = #{user.databaseId},
+            DATABASE_USER_ID = #{user.databaseUserId},
+            REF_INFO = #{user.refInfo}
+        WHERE NUM = #{num}
+    </update>
+
+    <delete id="deleteUser">
+        DELETE FROM USER_INFO
+        WHERE NUM = #{num}
+    </delete>
+
+    <insert id="newUser" parameterType="com.example.dream.vo.User">
+        INSERT INTO USER_INFO (
+            DATABASE_TYPE,
+            DATABASE_VERSION,
+            SERVER_IP,
+            DATABASE_ID,
+            DATABASE_USER_ID,
+            REF_INFO
+        )
+        VALUES (
+            #{databaseType},
+            #{databaseVersion},
+            #{serverIp},
+            #{databaseId},
+            #{databaseUserId},
+            #{refInfo}
+        )
+    </insert>
+
+</mapper>
+

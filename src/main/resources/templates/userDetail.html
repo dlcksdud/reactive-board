@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="/css/userDetailUpdateCreate.css">
+    <title>User Detail</title>
+</head>
+<body>
+<h1>상세 페이지</h1>
+
+<!-- 사용자 정보 테이블 -->
+<div id="userDetailContainer">
+    <div class="user-detail">
+        <span class="label">번호:</span>
+        <span id="numInput" class="value" th:text="${userDetail['userData'][0]['num']}"></span>
+    </div>
+    <div class="user-detail">
+        <span class="label">SERVER_IP:</span>
+        <span class="value" th:text="${userDetail['userData'][0]['SERVER_IP']}"></span>
+    </div>
+    <div class="user-detail">
+        <span class="label">DATABASE_TYPE:</span>
+        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_TYPE']}"></span>
+    </div>
+    <div class="user-detail">
+        <span class="label">DATABASE_ID:</span>
+        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_ID']}"></span>
+    </div>
+    <div class="user-detail">
+        <span class="label">REF_INFO:</span>
+        <span class="value" th:text="${userDetail['userData'][0]['REF_INFO']}"></span>
+    </div>
+    <div class="user-detail">
+        <span class="label">DATABASE_VERSION:</span>
+        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_VERSION']}"></span>
+    </div>
+    <div class="user-detail">
+        <span class="label">DATABASE_USER_ID:</span>
+        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_USER_ID']}"></span>
+    </div>
+</div>
+
+<!-- 버튼: 사용자 목록으로 돌아가기 -->
+<div id="backButton">
+    <button class="oneButton" onclick="goBack()">돌아가기</button>
+    <button class="oneButton" onclick="update()">수정</button>
+    <button class="oneButton" onclick="deleteUser()">삭제</button>
+</div>
+
+
+<script src="/js/userDetail.js"></script>
+</body>
+</html>
