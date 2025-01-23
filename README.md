@@ -36,7 +36,7 @@
 ## 실행 방법
 1. 프로젝트를 클론합니다:
    ```bash
-   git clone https://github.com/username/dream.git
+   git clone https://github.com/dlcksdud/dream.git
 2. **IntelliJ에서 프로젝트 열기**  
    - IntelliJ IDEA에서 클론한 프로젝트를 엽니다.
 
