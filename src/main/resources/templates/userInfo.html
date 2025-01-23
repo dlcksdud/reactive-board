@@ -10,11 +10,10 @@
 <body>
 <h1>사용자 리스트</h1>
 
-<form id="updateForm">
+<form id="listForm">
     <table>
         <thead>
         <tr>
-<!--            <th>선택</th>-->
             <th>번호</th>
             <th>SERVER_IP</th>
             <th>DATABASE_TYPE</th>
@@ -26,28 +25,25 @@
         </thead>
         <tbody id="tableBody">
         <tr th:each="user : ${userData}">
-<!--            <td>-->
-<!--                <input type="checkbox" name="selected" th:value="${user.num}" />-->
-<!--            </td>-->
             <td th:onclick="|location.href='/details/${user.num}'|">
                 <span th:text="${user.num}"></span>
             </td>
             <td th:onclick="|location.href='/details/${user.num}'|">
                 <span th:text="${user.SERVER_IP}"></span>
             </td>
-            <td th:onclick="|location.href='/details/${user.num}'|">
+            <td th:onclick="|location.href='/getOneUser/${user.num}'|">
                 <span th:text="${user.DATABASE_TYPE}"></span>
             </td>
-            <td th:onclick="|location.href='/details/${user.num}'|">
+            <td th:onclick="|location.href='/getOneUser/${user.num}'|">
                 <span th:text="${user.DATABASE_ID}"></span>
             </td>
-            <td th:onclick="|location.href='/details/${user.num}'|">
+            <td th:onclick="|location.href='/getOneUser/${user.num}'|">
                 <span th:text="${user.REF_INFO}"></span>
             </td>
-            <td th:onclick="|location.href='/details/${user.num}'|">
+            <td th:onclick="|location.href='/getOneUser/${user.num}'|">
                 <span th:text="${user.DATABASE_VERSION}"></span>
             </td>
-            <td th:onclick="|location.href='/details/${user.num}'|">
+            <td th:onclick="|location.href='/getOneUser/${user.num}'|">
                 <span th:text="${user.DATABASE_USER_ID}"></span>
             </td>
         </tr>

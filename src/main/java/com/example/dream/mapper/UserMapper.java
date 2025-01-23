@@ -11,7 +11,7 @@ import java.util.Map;
 public interface UserMapper {
 
 
-    List<Map<String, String>> getUser(Map<String, Object> param);
+    List<Map<String, String>> getUser();
 
     int updateUser(String num, User user);
 
@@ -20,6 +20,8 @@ public interface UserMapper {
     int newUser(User user);
 
     int updateServerIp(String num, String encryptedIp);
+
+    User getOneUser(String num);
 
 //    List<Map<String, String>> getUserNoParam();
 }

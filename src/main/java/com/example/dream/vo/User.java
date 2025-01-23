@@ -1,99 +1,96 @@
 package com.example.dream.vo;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
-//    public String DatabaseType;
-//    public String DatabaseVersion;
-//    public String ServerIp;
-//    public String DatabaseId;
-//    public String DatabaseUserId;
-//    public String RefInfo; // 이거 빼고 나머지가 not null
-//    public int Num;
+
     @JsonProperty("SERVER_IP")
-    private String ServerIp;
+    private String SERVER_IP;
 
     @JsonProperty("DATABASE_TYPE")
-    private String DatabaseType;
+    private String DATABASE_TYPE;
 
     @JsonProperty("DATABASE_ID")
-    private String DatabaseId;
+    private String DATABASE_ID;
 
     @JsonProperty("REF_INFO")
-    private String RefInfo;
+    private String REF_INFO;
 
-    @JsonProperty("num")
+    @JsonProperty("Num")
     private String Num;
 
     @JsonProperty("DATABASE_VERSION")
-    private String DatabaseVersion;
+    private String DATABASE_VERSION;
 
     @JsonProperty("DATABASE_USER_ID")
-    private String DatabaseUserId;
+    private String DATABASE_USER_ID;
 
-    public String getDatabaseType() {
-        return DatabaseType;
+    public String getDATABASE_ID() {
+        return DATABASE_ID;
     }
 
-    public String getDatabaseVersion() {
-        return DatabaseVersion;
+    public String getSERVER_IP() {
+        return SERVER_IP;
     }
 
-    public String getServerIp() {
-        return ServerIp;
+    public String getDATABASE_TYPE() {
+        return DATABASE_TYPE;
     }
 
-    public String getDatabaseId() {
-        return DatabaseId;
+    public String getREF_INFO() {
+        return REF_INFO;
     }
 
-    public String getDatabaseUserId() {
-        return DatabaseUserId;
+    public String getNum() {
+        return Num;
     }
 
-    public String getRefInfo() {
-        return RefInfo;
+    public String getDATABASE_VERSION() {
+        return DATABASE_VERSION;
     }
 
-    public String getNum() {return Num;}
-
-    public void setDatabaseType(String databaseType) {
-        DatabaseType = databaseType;
+    public String getDATABASE_USER_ID() {
+        return DATABASE_USER_ID;
     }
 
-    public void setDatabaseVersion(String databaseVersion) {
-        DatabaseVersion = databaseVersion;
+    public void setSERVER_IP(String SERVER_IP) {
+        this.SERVER_IP = SERVER_IP;
     }
 
-    public void setServerIp(String serverIp) {
-        ServerIp = serverIp;
+    public void setDATABASE_TYPE(String DATABASE_TYPE) {
+        this.DATABASE_TYPE = DATABASE_TYPE;
     }
 
-    public void setDatabaseId(String databaseId) {
-        DatabaseId = databaseId;
+    public void setDATABASE_ID(String DATABASE_ID) {
+        this.DATABASE_ID = DATABASE_ID;
     }
 
-    public void setDatabaseUserId(String databaseUserId) {
-        DatabaseUserId = databaseUserId;
+    public void setREF_INFO(String REF_INFO) {
+        this.REF_INFO = REF_INFO;
     }
 
-    public void setRefInfo(String refInfo) {
-        RefInfo = refInfo;
+    public void setNum(String num) {
+        Num = num;
     }
 
-    public void setNum(String num) {Num = num;}
+    public void setDATABASE_VERSION(String DATABASE_VERSION) {
+        this.DATABASE_VERSION = DATABASE_VERSION;
+    }
+
+    public void setDATABASE_USER_ID(String DATABASE_USER_ID) {
+        this.DATABASE_USER_ID = DATABASE_USER_ID;
+    }
 
     @Override
     public String toString() {
         return "User{" +
-                "DatabaseType='" + DatabaseType + '\'' +
-                ", DatabaseVersion='" + DatabaseVersion + '\'' +
-                ", ServerIp='" + ServerIp + '\'' +
-                ", DatabaseId='" + DatabaseId + '\'' +
-                ", DatabaseUserId='" + DatabaseUserId + '\'' +
-                ", RefInfo='" + RefInfo + '\'' +
+                "SERVER_IP='" + SERVER_IP + '\'' +
+                ", DATABASE_TYPE='" + DATABASE_TYPE + '\'' +
+                ", DATABASE_ID='" + DATABASE_ID + '\'' +
+                ", REF_INFO='" + REF_INFO + '\'' +
                 ", Num='" + Num + '\'' +
+                ", DATABASE_VERSION='" + DATABASE_VERSION + '\'' +
+                ", DATABASE_USER_ID='" + DATABASE_USER_ID + '\'' +
                 '}';
     }
 }

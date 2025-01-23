@@ -58,6 +58,7 @@ button {
 }
 button:hover {
     background-color: #0056b3; /* 버튼 호버 색상 */
+    cursor: pointer;
 }
 
 
@@ -70,6 +71,7 @@ button:hover {
 
 .oneButton {
     margin-right: 10px;
+
 }
 
 
@@ -91,4 +93,16 @@ input[type="text"]:focus {
     border-color: #4a90e2;
     background-color: #ffffff;
     outline: none;
+}
+
+/* 초기 상태: disabled 버튼 */
+#saveChangesBtn:disabled {
+    background-color: gray; /* 비활성화 상태의 색상 */
+    cursor: not-allowed; /* 비활성화 상태의 커서 */
+}
+
+/* 활성화 상태: enabled 버튼 */
+#saveChangesBtn {
+    background-color: #008b8b; /* 활성화 상태의 색상 */
+    cursor: pointer; /* 활성화 상태의 커서 */
 }

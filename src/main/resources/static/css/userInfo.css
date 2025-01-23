@@ -15,6 +15,7 @@ th {
 }
 tr:hover {
     background-color: #f5f5f5;
+    cursor: pointer;
 }
 
 h1 {
@@ -22,7 +23,7 @@ h1 {
     color: #008b8b;
 }
 
-#updateForm {
+#listForm {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -39,5 +40,6 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* 버튼 호버 색상 */
+    background-color: #0056b3;
+    cursor: pointer;/* 버튼 호버 색상 */
 }

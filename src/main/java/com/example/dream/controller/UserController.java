@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,43 +25,31 @@ public class UserController {
 
     // 데이터 가져오기
     @RequestMapping(value = "/view/get")
-    public String getData(@RequestParam(required = false) Map<String, Object> param, Model model) {
+    public String getData(Model model) {
         // 매서드 따로 만들기
-        param.put("null", null);
-        Map<String, Object> getUserData = userService.getUser(param);
+        Map<String, Object> getUserData = userService.getUser();
         model.addAttribute("userData", getUserData.get("userData"));
         return "userInfo";
     }
 
     // 상세페이지, 수정페이지
-    @RequestMapping(value = "/details/{num}")
+    @RequestMapping(value = "/getOneUser/{num}")
     public String detailOfUser(@PathVariable String num, Model model) {
-        System.out.println("num??" + num);
-        Map<String, Object> params = new HashMap<>();
-        params.put("num", num);
         // User vo로 받는 형태로 변경
-        Map<String, Object> detailOfUser = userService.getUser(params);
-        System.out.println("detailOfUser = " + detailOfUser.toString());
-        model.addAttribute("userDetgail", detailOfUser);
+        User user  = userService.getOneUser(num);
+        System.out.println("One User = " + user.toString());
+        model.addAttribute("user", user);
         return "userDetail";
-    }
-
-    // 수정 페이지
-    @RequestMapping(value = "/updatePage/{num}")
-    public String updatePage(@PathVariable String num, Model model) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("num", num);
-        Map<String, Object> detailOfUser = userService.getUser(params);
-        model.addAttribute("userDetail", detailOfUser);
-        return "userUpdate";
     }
 
     // 데이터 수정하기
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public ResponseEntity<Map<String, Object>> updateData(@RequestBody List<User> user) {
+    public ResponseEntity<Map<String, Object>> updateData(@RequestBody User user) {
+        System.out.println("User = " + user.toString());
         Map<String, Object> updateData = userService.updateUser(user);
         return ResponseEntity.ok(updateData);
     }
+
 
     // 데이터 삭제하기
     @RequestMapping(value = "/delete", method = RequestMethod.POST)

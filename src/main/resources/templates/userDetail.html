@@ -14,39 +14,40 @@
 <div id="userDetailContainer">
     <div class="user-detail">
         <span class="label">번호:</span>
-        <span id="numInput" class="value" th:text="${userDetail['userData'][0]['num']}"></span>
+        <span id="numInput" class="value" th:text="${user.Num}"></span>
     </div>
     <div class="user-detail">
         <span class="label">SERVER_IP:</span>
-        <span class="value" th:text="${userDetail['userData'][0]['SERVER_IP']}"></span>
+        <input type="text" id="serverIpInput" class="value" th:value="${user.SERVER_IP}" readonly></input>
     </div>
     <div class="user-detail">
         <span class="label">DATABASE_TYPE:</span>
-        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_TYPE']}"></span>
+        <input type="text" id="dbTypeInput" class="value" th:value="${user.DATABASE_TYPE}" readonly></input>
     </div>
     <div class="user-detail">
         <span class="label">DATABASE_ID:</span>
-        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_ID']}"></span>
+        <input type="text" id="dbIdInput" class="value" th:value="${user.DATABASE_ID}" readonly></input>
     </div>
     <div class="user-detail">
         <span class="label">REF_INFO:</span>
-        <span class="value" th:text="${userDetail['userData'][0]['REF_INFO']}"></span>
+        <input type="text" id="refInfoInput" class="value" th:value="${user.REF_INFO}" readonly></input>
     </div>
     <div class="user-detail">
         <span class="label">DATABASE_VERSION:</span>
-        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_VERSION']}"></span>
+        <input type="text" id="dbVersionInput" class="value" th:value="${user.DATABASE_VERSION}" readonly></input>
     </div>
     <div class="user-detail">
         <span class="label">DATABASE_USER_ID:</span>
-        <span class="value" th:text="${userDetail['userData'][0]['DATABASE_USER_ID']}"></span>
+        <input type="text" id="dbUserIdInput" class="value" th:value="${user.DATABASE_USER_ID}" readonly></input>
     </div>
 </div>
 
 <!-- 버튼: 사용자 목록으로 돌아가기 -->
 <div id="backButton">
     <button class="oneButton" onclick="goBack()">돌아가기</button>
-    <button class="oneButton" onclick="update()">수정</button>
+    <button class="oneButton" id="updateBtn" onclick="update()">수정</button>
     <button class="oneButton" onclick="deleteUser()">삭제</button>
+    <button class="oneButton" id="saveChangesBtn" onclick="saveChanges()" disabled>저장</button>
 </div>
 
 
