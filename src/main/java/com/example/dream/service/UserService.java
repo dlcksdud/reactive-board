@@ -24,4 +24,6 @@ public interface UserService {
     Map<String, Object> deleteUserManyNums(List<Integer> nums);
 
     User getOneUser(String num);
+
+    Map<String, Object> getColumn();
 }

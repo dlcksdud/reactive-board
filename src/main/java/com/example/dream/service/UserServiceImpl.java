@@ -100,18 +100,19 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-
-//    public Map<String, Object> getUserNoParam() {
-//        // 데이터를 JSON 형식으로 응답
-//        Map<String, Object> response = new HashMap<>();
-//        try{
-//            List<Map<String, String>> getUserData = userMapper.getUserNoParam();
-//            response.put("userData", getUserData);
-//        } catch (Exception e) {
-//            response.put("에러 로그를 확인하세요.", e.toString());
-//        }
-//        return response;
-//    }
+    @Override
+    public Map<String, Object> getColumn() {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            List<String> getColumn = userMapper.getColumn();
+            response.put("getColumn", getColumn);
+            System.out.println("getColumn : " + getColumn.toString());
+        } catch (Exception e) {
+            response.put("에러가 발생했습니다.", e.toString());
+            throw new RuntimeException(e);
+        }
+        return response;
+    }
 
 
     @Override

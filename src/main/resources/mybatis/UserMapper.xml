@@ -2,9 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dream.mapper.UserMapper">
     <select id="getUser"  resultType="map">
-        SELECT *
+        SELECT DATABASE_TYPE, DATABASE_VERSION, SERVER_IP, DATABASE_ID, DATABASE_USER_ID, REF_INFO, num
         FROM USER_INFO
     </select>
+
+<!--    <select id="getUser" resultType="String">-->
+<!--        SELECT DATABASE_TYPE, DATABASE_VERSION, SERVER_IP, DATABASE_ID, DATABASE_USER_ID, REF_INFO, num-->
+<!--        FROM USER_INFO-->
+<!--    </select>-->
 
     <select id="getOneUser" resultType="com.example.dream.vo.User">
         SELECT *
@@ -55,5 +60,11 @@
         )
     </insert>
 
+    <select id="getColumn" resultType="String">
+        SELECT COLUMN_NAME
+        FROM INFORMATION_SCHEMA.COLUMNS
+        WHERE TABLE_SCHEMA = 'mysql1'
+        AND TABLE_NAME = 'USER_INFO'
+    </select>
 </mapper>
 

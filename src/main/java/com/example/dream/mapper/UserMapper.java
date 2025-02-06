@@ -13,6 +13,7 @@ public interface UserMapper {
 
     List<Map<String, String>> getUser();
 
+
     int updateUser(String num, User user);
 
     int deleteUser(int num);
@@ -22,6 +23,8 @@ public interface UserMapper {
     int updateServerIp(String num, String encryptedIp);
 
     User getOneUser(String num);
+
+    List<String> getColumn();
 
 //    List<Map<String, String>> getUserNoParam();
 }

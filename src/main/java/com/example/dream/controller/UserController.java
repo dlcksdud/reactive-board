@@ -18,6 +18,7 @@ import java.util.Map;
 
 
 @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
     @Autowired
@@ -30,6 +31,22 @@ public class UserController {
         Map<String, Object> getUserData = userService.getUser();
         model.addAttribute("userData", getUserData.get("userData"));
         return "userInfo";
+    }
+
+    @RequestMapping(value = "/getUserInfo")
+    public ResponseEntity<Map<String, Object>> getData() {
+        // 매서드 따로 만들기
+        Map<String, Object> getUserData = userService.getUser();
+        System.out.println("getUserData : " + getUserData);
+        return ResponseEntity.ok(getUserData);
+    }
+
+    
+    // 컬럼만 가져오기
+    @RequestMapping(value = "getColumn")
+    public ResponseEntity<Map<String, Object>> getColumn() {
+        Map<String, Object> getColumn = userService.getColumn();
+        return ResponseEntity.ok(getColumn);
     }
 
     // 상세페이지, 수정페이지
